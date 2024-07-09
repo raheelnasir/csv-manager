@@ -68,12 +68,13 @@ export const CsvEditor: React.FC = () => {
           <tr className="bg-gray-200">
             {Object.keys(editedData[0]).map((key) => (
               <th key={key} className="border p-2 relative">
+                
                 {key}
                 <button
                   onClick={() => deleteColumn(key)}
-                  className="absolute right-0 top-0 bg-red-500 text-white p-1 rounded-bl"
-                >
-                  X
+                  className="absolute right-0 top-2 bg-red-500 py-0 text-white p-1 rounded-sm"
+                >                  X
+
                 </button>
               </th>
             ))}
@@ -82,6 +83,7 @@ export const CsvEditor: React.FC = () => {
         <tbody>
           {editedData.map((row, rowIndex) => (
             <tr key={rowIndex}>
+             
               {Object.keys(row).map((key) => (
                 <td key={key} className="border p-2">
                   <input
@@ -92,13 +94,12 @@ export const CsvEditor: React.FC = () => {
                   />
                 </td>
               ))}
-              <td>
+ <td>
                 <button
                   onClick={() => deleteRow(rowIndex)}
                   className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded"
                 >
-                  Delete Row
-                </button>
+                  X                </button>
               </td>
             </tr>
           ))}
